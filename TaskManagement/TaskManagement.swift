@@ -19,8 +19,7 @@ struct TaskManagement: View {
     
     var body: some View {
         ZStack {
-            // Add the background image
-            Image("main-bg") // Replace "background" with the actual name of your image in the asset catalog
+            Image("main-bg")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipped()
