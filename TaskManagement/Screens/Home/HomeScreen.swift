@@ -188,16 +188,18 @@ struct InProgressSection: View {
 }
 
 struct CircularProgressView: View {
+    let lineWidth:CGFloat
     let size: CGFloat
     let color: Color
     let innerTextColor: Color
     let font: Font
     
-    init(size: CGFloat = 80, color: Color = .white, innerTextColor: Color = .white, font: Font = .footnote) {
+    init(size: CGFloat = 80, color: Color = .white, innerTextColor: Color = .white, font: Font = .footnote, lineWidth: CGFloat = 10) {
         self.size = size
         self.color = color
         self.innerTextColor = innerTextColor
         self.font = font
+        self.lineWidth = lineWidth
     }
     
     var body: some View {
@@ -205,7 +207,7 @@ struct CircularProgressView: View {
             Circle()
                 .stroke(
                     color.opacity(0.5),
-                    lineWidth: 10
+                    lineWidth: lineWidth
                 )
             Circle()
                 .trim(from: 0, to: 0.85)
@@ -213,7 +215,7 @@ struct CircularProgressView: View {
                     color,
                     // 1
                     style: StrokeStyle(
-                        lineWidth: 10,
+                        lineWidth: lineWidth,
                         lineCap: .round
                     )
                 )
@@ -255,7 +257,7 @@ struct TaskGroupCardView: View {
                 
                 Spacer()
                 
-                CircularProgressView(size: 45, color: .blue, innerTextColor: .black, font: .caption2)
+                CircularProgressView(size: 45, color: .blue, innerTextColor: .black, font: .caption2, lineWidth: 4)
             }
             .padding(.horizontal, 40)
             
