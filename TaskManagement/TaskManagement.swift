@@ -10,6 +10,7 @@ import UIKit
 
 struct TaskManagement: View {
     @State private var selectedTab = 0
+    @State private var selectedTabViewValue: ScheduleTabList = .all
     @State private var taskManagementViewModel = TaskManagementViewModel()
     init() {
         UITabBar.appearance().isTranslucent = true
